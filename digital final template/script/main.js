@@ -17,6 +17,8 @@ $(window).ready(function() {
 	});
 });
 
+
+
 $(window).ready(function(){
 	$(".topBtn").click(function() {
 		$(window).animate({
@@ -26,10 +28,22 @@ $(window).ready(function(){
 })
 
 $(window).ready(function(){
-
 	$(".input").click(function(event){
 		$(".input").css("border-bottom", "2px solid #d5d5d5")
 		$(this).css("border-bottom", "2px solid #53b778")
-
 	})
 });
+
+var list = $(".tor")
+
+for (var i = 0; i < list.length; i++) {
+	list[i].addEventListener("click",function(){
+		var element = $(this).index();
+		for (var o = list.length; o > element; o--) {
+			$(list[o]).removeClass("change");
+		}
+		for (var j = 0; j <= element; j++) {
+			$(list[j]).attr("class", "change");
+		}
+	})
+}
